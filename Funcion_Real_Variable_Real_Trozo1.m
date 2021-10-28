@@ -9,14 +9,14 @@
 %                            :https://octaveintro.readthedocs.io/en/latest/index.html
 
 clear
+syms x
 %Funcion Real Variable Real (funcioon 1 a trozo)
 % Calcular f(-1), f(1), f(2)
-f= @(x) (-x+2).*(x<-1)+(x).*(x>=-1).*(x<=2)+(2).*(x>2);
-f(-1)
-f(1)
-f(2)
-% Estudia la continuiudad de f
-f(-1)
-f(2)
-fplot(@(x)(-x+2).*(x<-1)+(x).*(x>=-1).*(x<=2)+(2).*(x>2),[-5,5])
+x=-50:10:50
+
+fx  = ...
+   ( -x +2 ).*( x < -1 )+ ...
+   ( x ).*( x<= 2 & x >= -1 )+ ...
+   ( 2 ).*( x > 2 );
+plot(x,fx)
 grid on
